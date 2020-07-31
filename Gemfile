@@ -22,6 +22,9 @@ gem "roo", "~> 2.8.0"
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'factory_bot'
+  gem 'ffaker'
+  gem 'rspec-rails', '~> 4.0.1'
 end
 
 group :development do
