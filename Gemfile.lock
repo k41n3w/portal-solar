@@ -1,5 +1,6 @@
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     actioncable (5.2.3)
       actionpack (= 5.2.3)
@@ -205,7 +206,7 @@ DEPENDENCIES
   pry (~> 0.12.2)
   puma (~> 3.11)
   rails (~> 5.2)
-  rails-assets-jquery
+  rails-assets-jquery!
   roo (~> 2.8.0)
   sass-rails (~> 5)
   selenium-webdriver

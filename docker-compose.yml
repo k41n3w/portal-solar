@@ -1,0 +1,24 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - ./tmp/postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: 'trust'
+      POSTGRES_DB: portal_solar_development
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      DATABASE_URL: postgresql://postgres@db
+    command: /bin/bash -c "rm -f /tmp/server.pid && bundle exec rails server -b 0.0.0.0 -P /tmp/server.pid"
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+    volumes:
+      - .:/app
