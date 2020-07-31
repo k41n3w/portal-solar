@@ -55,7 +55,7 @@ p.power_generator-card__price {
   justify-content: center;
   align-items: center;
   height: 180px;
-  
+  overflow: hidden;
 }
 
 .header__title {
@@ -142,3 +142,13 @@ p.power_generator-card__price {
   color: #e96443;
 }
 
+.alert {
+  background: #e96443;
+  background: -webkit-linear-gradient(to right, #e98f00, #e98776);
+  background: linear-gradient(to right, #ff9876, #c6c654);
+  text-align: right;
+}
+
+.text-right {
+  float: right;
+}

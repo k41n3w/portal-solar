@@ -21,9 +21,36 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+  <br>
+
+  <div class="field">
+    <%= f.label :question_1 %><br />
+    <%= f.select(:question_1, options_for_select(User::question_1, :selected => f.object.question_1), :include_blank => true) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :question_2 %><br />
+    <%= f.select(:question_2, options_for_select(User::question_2, :selected => f.object.question_2), :include_blank => true) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :question_3 %><br />
+    <%= f.select(:question_3, options_for_select(User::question_3, :selected => f.object.question_3), :include_blank => true) %>
+  </div>
+  
+  <br>
+
+  <div class="field">
+    <%= f.label :cep %><br />
+    <%= f.text_field :cep %>
+  </div>
+  
+  <br>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
+
 
 <%= render "devise/shared/links" %>
