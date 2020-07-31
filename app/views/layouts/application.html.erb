@@ -9,6 +9,53 @@
     <%= javascript_pack_tag 'application' %>
   </head>
   <body>
+    <div class="header">
+      <div class="logo"><%= image_tag 'ps_logo.png' %></div>
+      <div class="header__title">Geradores de Energia</div>
+    </div>
+
+    <div class="searcher gradient">
+      <div class="searcher__radio">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="searchRadio" id="simpleSearch" value="simple" checked>
+          <label class="form-check-label" for="simpleSearch">Pesquisa simples</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="searchRadio" id="advancedSearch" value="advanced">
+          <label class="form-check-label" for="advancedSearch">Pesquisa Avançada</label>
+        </div>
+      </div>
+
+      <%= form_tag do %>
+        <div class="simple-form">
+          <div class="simple-form__input">
+            <input class="form-control form-control-lg" type="text" placeholder="o que procura?">
+          </div>
+          <div class="simple-form__btn">
+            <button type="submit" class="btn btn-outline-primary btn-lg">Pesquisar</button>
+          </div>
+        </div>
+
+        <div class="advanced-form" style="display:none;">
+          Entradas do usuário para pesquisar uma coleção de geradores de energia com base nas recomendações fornecidas e melhor custo de frete.
+        </div>
+      <% end %>
+
+      <div>
+        <div class="col-sm">
+          <% if user_signed_in? %>
+            Logged in as <strong><%= current_user.email %></strong>.
+            <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> |
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+          <% else %>
+            <%= link_to "Cadastrar", new_user_registration_path, :class => 'navbar-link'  %> |
+            <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
     <%= yield %>
+
   </body>
 </html>
