@@ -23,6 +23,8 @@ class ApplicationController < ActionController::Base
   
     answers = @power_generators.where("#{attribute} <= ?", max_value)
 
+    @power_generators = answers if answers.count > 3
+
     @perfect_match = answers
   end
 
