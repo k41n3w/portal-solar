@@ -13,7 +13,9 @@ en:
         question_1: Qual seu perfil?
         question_2: Qual a garantia desejada?
         question_3: Sobre o monitoramento dos equipamentos você prefere?
-        question_4: Escolha a faixa de preço desejada
-        question_5: Faixa de peso em kilos
+        question_4: Preço máximo
+        question_5: Peso máximo
+        question_6: Potência máxima em kWp
+        question_7: Tipo de estrutura
 
   

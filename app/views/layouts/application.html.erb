@@ -10,7 +10,9 @@
   </head>
   <body>
     <div class="header">
-      <div class="logo"><%= image_tag 'ps_logo.png' %></div>
+          <%= link_to root_path do %>
+            <div class="logo"><%= image_tag 'ps_logo.png' %></div>
+          <% end %>
       <div class="header__title">Geradores de Energia</div>
     </div>
 

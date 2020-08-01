@@ -47,6 +47,16 @@
     <%= f.label :question_5 %><br />
     <%= f.select(:question_5, options_for_select(User::question_5, :selected => f.object.question_5), :include_blank => true) %>
   </div>
+
+  <div class="field">
+    <%= f.label :question_6 %><br />
+    <%= f.select(:question_6, options_for_select(User::question_6, :selected => f.object.question_6), :include_blank => true) %>
+  </div>
+
+    <div class="field">
+    <%= f.label :question_7 %><br />
+    <%= f.select(:question_7, options_for_select(User::question_7, :selected => f.object.question_7), :include_blank => true) %>
+  </div>
   
   <br>
 

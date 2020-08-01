@@ -17,10 +17,18 @@ class User < ApplicationRecord
   end
 
   def self.question_4
-    ['0 a 10.000,00', '10.000,01 a 25.000,00', '25.000,01 a 50.000,00', '50.000,01 a 100.000,00']
+    ['10.000,00', '25.000,00', '50.000,00', '100.000,00']
   end
 
   def self.question_5
-    ['0 a 100', '101 a 200', '201 a 300']
+    ['100', '200', '300']
+  end
+
+  def self.question_6
+    ['5', '15', '50']
+  end
+
+  def self.question_7
+    ['metalico', 'ceramico', 'fibrocimento', 'laje', 'solo', 'trapezoidal']
   end
 end
