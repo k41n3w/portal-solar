@@ -51,6 +51,12 @@
           <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
         <% end %>
       </div>
+
+      <div>
+        <% if user_signed_in? %>
+          <%= button_to "Melhores Produtos", match_equipment_index_path, method: :get %>
+        <% end %>
+      </div>
     </div>
 
     <% if notice %>

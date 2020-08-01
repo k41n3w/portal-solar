@@ -5,4 +5,15 @@ en:
   laje: Laje
   solo: Solo
   trapezoidal: Trapezoidal
+  activerecord:
+    models:
+      user: Usuario
+    attributes:
+      user:
+        question_1: Qual seu perfil?
+        question_2: Qual a garantia desejada?
+        question_3: Sobre o monitoramento dos equipamentos você prefere?
+        question_4: Escolha a faixa de preço desejada
+        question_5: Faixa de peso em kilos
+
   
