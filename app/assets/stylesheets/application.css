@@ -152,3 +152,18 @@ p.power_generator-card__price {
 .text-right {
   float: right;
 }
+
+.power_generator-show-card {
+  display: flex;
+  flex-direction: row;
+  margin-left: -60px;
+}
+
+.power_generator-show__img {
+  width: 660px;
+  height: 480px;
+}
+
+.power_generator-show__body {
+  margin-left: 100px;
+}

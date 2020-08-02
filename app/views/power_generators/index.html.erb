@@ -8,7 +8,10 @@
           <p class="power_generator-card__price"><%= number_to_currency(power_generator.price, unit: "R$ ", precision: 2, :separator => ",", :delimiter => ".") %></p>
           <p><strong>Descrição: </strong><%= power_generator.description %></p>
           <p><strong>Peso: </strong><%= power_generator.weight %></p>
-          <%= button_to "Verificar Frete", power_generator_path(power_generator.id), method: :get %>
+          <p><strong>Potência: </strong><%= power_generator.kwp %></p>
+          <p><strong>Estrutura: </strong><%= power_generator.structure_type %></p>
+          
+          <%= button_to "Verificar Frete", power_generator_path(power_generator.id), method: :get, class: 'power_generator-card__button' %>
         </div>
       </div>
     <% end %>
