@@ -14,9 +14,7 @@ class PowerGeneratorsController < ApplicationController
 
       # Freight.create!(state: state, weight_min: weight_min, weight_max: weight_max, cost: cost)
       @cost = Freight.where(state: address[:state])
-      @cost = @cost.where("weight_min > ?", @power_generator.weight).first
-      p @cost
-      return @cost
+      @cost = @cost.where("weight_max >= ?", @power_generator.weight).first
     end
   end
 
