@@ -13,10 +13,7 @@
       <%= link_to root_path do %>
         <div class="logo"><%= image_tag 'ps_logo.png' %></div>
       <% end %>
-      <div class="header__title"></div>
-      <% if user_signed_in? %>
-        <%= button_to "Produtos recomendados especialmente para você :)", match_equipment_index_path, method: :get %>
-      <% end %>
+      <div class="header__title">Geradores de Energia</div>
     </div>
 
     <div class="searcher gradient">
@@ -24,6 +21,10 @@
         <%= f.label :'Buscar Por Nome ou kWp' %>
         <%= f.search_field :name_or_kwp_eq %>
         <%= f.submit "Buscar" %>
+      <% end %>
+
+      <% if user_signed_in? %>
+        <%= button_to "Produtos recomendados especialmente para você :)", match_equipment_index_path, method: :get %>
       <% end %>
 
       <div class='text-right' style='padding: 50px; right: 0px;'>
