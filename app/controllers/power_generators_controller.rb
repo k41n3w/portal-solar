@@ -8,7 +8,10 @@ class PowerGeneratorsController < ApplicationController
   end
 
   def show
+    
     unless params[:cep].nil?
+      return if params[:cep].size < 9
+      
       finder = Correios::CEP::AddressFinder.new
       address = finder.get(params[:cep])
 

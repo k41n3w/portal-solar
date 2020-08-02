@@ -13,6 +13,7 @@
 //= require jquery
 //= require rails-ujs
 //= require turbolinks
+//= require jquery-mask-plugin
 //= require_tree .
 
 function ready(event) {
@@ -29,3 +30,7 @@ function ready(event) {
 }
 
 $(document).on('turbolinks:load', ready);
+
+$(document).ready(function(){
+  $('#cep').mask('99999-999');
+});

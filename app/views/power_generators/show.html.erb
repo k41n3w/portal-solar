@@ -19,7 +19,7 @@
         <% if @cost.nil? %>
           <%= form_tag("/power_generators/#{@power_generator.id}", method: "get") do %>
             <%= label_tag(:cep, "Cep:") %>
-            <%= text_field_tag(:cep) %>
+            <%= text_field_tag(:cep, class: 'cep') %>
             <%= submit_tag("Buscar cep") %>
           <% end %>
         <% else %>
