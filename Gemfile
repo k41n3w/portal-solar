@@ -14,6 +14,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
 gem 'correios-cep'
 gem 'jquery_mask_rails'
+gem 'ransack'
 
 source "https://rails-assets.org" do
   gem "rails-assets-jquery"

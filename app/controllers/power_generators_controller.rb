@@ -2,13 +2,13 @@ require 'correios-cep'
 
 class PowerGeneratorsController < ApplicationController
   before_action :set_power_generator, only: %i[show]
-  before_action :set_power_generators, only: %i[index]
 
   def index
+    @q = PowerGenerator.ransack(params[:q])
+    @power_generators = @q.result(distinct: true).limit(6)
   end
 
   def show
-    
     unless params[:cep].nil?
       return if params[:cep].size < 9
       
@@ -24,9 +24,5 @@ class PowerGeneratorsController < ApplicationController
 
   def set_power_generator
     @power_generator = PowerGenerator.find(params[:id])
-  end
-
-  def set_power_generators
-    @power_generators = PowerGenerator.all
   end
 end
