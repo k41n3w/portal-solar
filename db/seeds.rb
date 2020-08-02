@@ -24,8 +24,8 @@ PowerGenerator.create!(
                 Altamente confiável e econômico, o YC600i com EnergyMaxTM é otimizado para os mais novos painéis fotovoltaicos de alta eficiência. 
                 O micro inversor possui 600W de potência de saída e duplo MPPT. Com aterramento integrado, sem a necessidade de string box e com a metade 
                 do tempo de instalação, você economiza dinheiro e tempo.
-                Garantia simples.
-                Display simples.', 
+                Garantia de 10 anos para o produto e Garantia linear de 25 anos.
+                Display LCD, resolução full HD, gráfico local e monitoramento remoto de ultima geração.', 
   image_url: 'https://marketplace-img-production.s3.amazonaws.com/products/107646/large/Montagem_YC600.JPG?1566566821', 
   manufacturer: 'Solar Group', 
   price: 2958.50,
@@ -60,8 +60,8 @@ PowerGenerator.create!(
   name: 'POLI HALF CELL', 
   description: 'Destinado principalmente a uso familiar, domicilar/doméstico. Eficiência média da célula de 17% 
                 PID Free
-                Garantia de 10 anos para o produto e Garantia linear de 25 anos. 
                 Sistemas comerciais ou residenciais on-grid e off-grid
+                Garantia de 10 anos para o produto e Garantia linear de 25 anos. 
                 Display simples.', 
   image_url: 'https://marketplace-img-production.s3.amazonaws.com/products/107162/large/20190808-1-1ap5e43.?1565248087', 
   manufacturer: 'BYD', 

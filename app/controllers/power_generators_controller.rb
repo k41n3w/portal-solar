@@ -12,7 +12,6 @@ class PowerGeneratorsController < ApplicationController
       finder = Correios::CEP::AddressFinder.new
       address = finder.get(params[:cep])
 
-      # Freight.create!(state: state, weight_min: weight_min, weight_max: weight_max, cost: cost)
       @cost = Freight.where(state: address[:state])
       @cost = @cost.where("weight_max >= ?", @power_generator.weight).first
     end

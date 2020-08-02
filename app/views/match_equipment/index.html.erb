@@ -24,24 +24,26 @@
 
   <div style='height:10vh;'></div>
 
-  <div style='height:100%; padding:10px'>
-    <h1 style='text-align: center'>Encontramos alguns equipamentos que também podem te interessar</h1>
-    <div class="container" >
-      <% @power_generators.each do |power_generator| %>
-        <div class="box card power_generator-card">
-          <%= image_tag power_generator.image_url, class: 'power_generator-card__img' %>
-          <div class="power_generator-card__body">
-            <h2><%= power_generator.name.upcase %></h2>
-            <p class="power_generator-card__price"><%= number_to_currency(power_generator.price, unit: "R$ ", precision: 2, :separator => ",", :delimiter => ".") %></p>
-            <p><strong>Descrição: </strong><%= power_generator.description %></p>
-            <p><strong>Peso: </strong><%= power_generator.weight %></p>
-            <p><strong>Potência: </strong><%= power_generator.kwp %></p>
-            <p><strong>Estrutura: </strong><%= power_generator.structure_type %></p>
-            
-            <%= button_to "Verificar Frete", power_generator_path(power_generator.id), method: :get, class: 'power_generator-card__button' %>
+  <% if @power_generators.count > 0 %>
+    <div style='height:100%; padding:10px'>
+      <h1 style='text-align: center'>Pesquisa Relacionada</h1>
+      <div class="container" >
+        <% @power_generators.each do |power_generator| %>
+          <div class="box card power_generator-card">
+            <%= image_tag power_generator.image_url, class: 'power_generator-card__img' %>
+            <div class="power_generator-card__body">
+              <h2><%= power_generator.name.upcase %></h2>
+              <p class="power_generator-card__price"><%= number_to_currency(power_generator.price, unit: "R$ ", precision: 2, :separator => ",", :delimiter => ".") %></p>
+              <p><strong>Descrição: </strong><%= power_generator.description %></p>
+              <p><strong>Peso: </strong><%= power_generator.weight %></p>
+              <p><strong>Potência: </strong><%= power_generator.kwp %></p>
+              <p><strong>Estrutura: </strong><%= power_generator.structure_type %></p>
+              
+              <%= button_to "Verificar Frete", power_generator_path(power_generator.id), method: :get, class: 'power_generator-card__button' %>
+            </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
-  </div>
+  <% end %>
 </div>
