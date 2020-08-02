@@ -9,5 +9,12 @@ class MatchEquipmentController < ApplicationController
     find_max_value(current_user.question_6, 'kwp')
 
     find_structure_type(current_user.question_7)
+
+    page = params[:page] || 1
+
+    @q = @power_generators.ransack(params[:q])
+    @q = @perfect_match.ransack(params[:q])
+
+    @power_generators = @q.result(distinct: true).paginate(page: page, per_page: 6)
   end
 end

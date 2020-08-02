@@ -1,28 +1,33 @@
-<div style='height: 50px;'>
-      <span style='margin: 25px;'><%= sort_link(@q, :price, 'Preço', { page: params[:page] }, default_order: :asc) %></span>
-  <span style='margin: 25px;'><%= sort_link(@q, :kwp, 'kWp', { page: params[:page] }, default_order: :asc) %></span>
-</div>
-
-<div>
-  <div class="container" >
-    <% @power_generators.each do |power_generator| %>
-      <div class="box card power_generator-card">
-        <%= image_tag power_generator.image_url, class: 'power_generator-card__img' %>
-        <div class="power_generator-card__body">
-          <h2><%= power_generator.name.upcase %></h2>
-          <p class="power_generator-card__price"><%= number_to_currency(power_generator.price, unit: "R$ ", precision: 2, :separator => ",", :delimiter => ".") %></p>
-          <p><strong>Descrição: </strong><%= power_generator.description %></p>
-          <p><strong>Peso: </strong><%= power_generator.weight %></p>
-          <p><strong>Potência: </strong><%= power_generator.kwp %></p>
-          <p><strong>Estrutura: </strong><%= power_generator.structure_type %></p>
-          
-          <%= button_to "Verificar Frete", power_generator_path(power_generator.id), method: :get, class: 'power_generator-card__button' %>
-        </div>
-      </div>
-    <% end %>
+<% if @power_generators.count > 0 %>
+  <div style='height: 50px;'>
+    Ordenar por: 
+    <span style='margin: 25px;'><%= sort_link(@q, :price, 'Preço', { page: params[:page] }, default_order: :asc) %></span>
+    <span style='margin: 25px;'><%= sort_link(@q, :kwp, 'kWp', { page: params[:page] }, default_order: :asc) %></span>
   </div>
-</div>
 
-<div style='text-align: center; padding: 150px; position: relative;'>
-  <%= will_paginate @power_generators if @power_generators.present? %>
-</div>
+  <div>
+    <div class="container" >
+      <% @power_generators.each do |power_generator| %>
+        <div class="box card power_generator-card">
+          <%= image_tag power_generator.image_url, class: 'power_generator-card__img' %>
+          <div class="power_generator-card__body">
+            <h2><%= power_generator.name.upcase %></h2>
+            <p class="power_generator-card__price"><%= number_to_currency(power_generator.price, unit: "R$ ", precision: 2, :separator => ",", :delimiter => ".") %></p>
+            <p><strong>Descrição: </strong><%= power_generator.description %></p>
+            <p><strong>Peso: </strong><%= power_generator.weight %></p>
+            <p><strong>Potência: </strong><%= power_generator.kwp %></p>
+            <p><strong>Estrutura: </strong><%= power_generator.structure_type %></p>
+            
+            <%= button_to "Verificar Frete", power_generator_path(power_generator.id), method: :get, class: 'power_generator-card__button' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div style='text-align: center; padding: 150px; position: relative;'>
+    <%= will_paginate @power_generators if @power_generators.present? %>
+  </div>
+<% else %>
+  <h1> Nenhum resultado encontrado para busca!</h1>
+<% end %>
