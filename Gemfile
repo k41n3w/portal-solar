@@ -15,6 +15,7 @@ gem 'devise'
 gem 'correios-cep'
 gem 'jquery_mask_rails'
 gem 'ransack'
+gem 'will_paginate', '~> 3.1.0'
 
 source "https://rails-assets.org" do
   gem "rails-assets-jquery"

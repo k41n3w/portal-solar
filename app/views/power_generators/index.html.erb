@@ -1,6 +1,6 @@
 <div style='height: 50px;'>
-  <span style='margin: 25px;'><%= sort_link(@q, :price, 'Preço', default_order: :asc) %></span>
-  <span style='margin: 25px;'><%= sort_link(@q, :kwp, 'kWp', default_order: :asc) %></span>
+      <span style='margin: 25px;'><%= sort_link(@q, :price, 'Preço', { page: params[:page] }, default_order: :asc) %></span>
+  <span style='margin: 25px;'><%= sort_link(@q, :kwp, 'kWp', { page: params[:page] }, default_order: :asc) %></span>
 </div>
 
 <div>
@@ -21,4 +21,8 @@
       </div>
     <% end %>
   </div>
+</div>
+
+<div style='text-align: center; padding: 150px; position: relative;'>
+  <%= will_paginate @power_generators if @power_generators.present? %>
 </div>
