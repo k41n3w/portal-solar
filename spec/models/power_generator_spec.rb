@@ -37,7 +37,7 @@ RSpec.describe PowerGenerator, type: :model do
 	end
 
 	describe 'validate_and_find_cep(cep)', :vcr do
-		let!(:power_generator) { create(:power_generator) }
+		let(:power_generator) { build_stubbed(:power_generator) }
 		
 		context 'with correct cep' do
 			it 'expect a correct return for cep' do
