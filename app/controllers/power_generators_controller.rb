@@ -14,7 +14,7 @@ class PowerGeneratorsController < ApplicationController
       address = finder.get(params[:cep])
 
       @cost = Freight.where(state: address[:state])
-      @cost = @cost.where("weight_max >= ?", @power_generator.weight).first
+      @cost = @cost.where("weight_max >= ?", @power_generator.cubage).first
     end
   end
 

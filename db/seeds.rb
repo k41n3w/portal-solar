@@ -1,6 +1,6 @@
 # Import list the Power Generators
 
-PowerGenerator.create!(
+power_generator = PowerGenerator.create!(
   name: 'TRIFÁSICO 380V', 
   description: 'Destinado principalmente a uso comercial, empresarial. 2 MPPTs para adaptação versátil a diferentes tipos ou quantidades de módulos construídos com diferentes alinhamentos    
                 Monitoramento inteligente de 4 strings e 80% de economia de tempo na detecção de falhas    
@@ -17,8 +17,10 @@ PowerGenerator.create!(
   weight: 118,
   structure_type: :metalico
 )
+cubage = power_generator.height * power_generator.width * power_generator.height * 300.0
+power_generator.update(cubage: cubage)
 
-PowerGenerator.create!(
+power_generator = PowerGenerator.create!(
   name: 'YC600 Monofásico', 
   description: 'Destinado principalmente a uso familiar, domicilar/doméstico. O APsystems YC600i com EnergyMaxTM é um microinversor grid-tie que garante a máxima eficiência do sistema fotovoltaico. 
                 Altamente confiável e econômico, o YC600i com EnergyMaxTM é otimizado para os mais novos painéis fotovoltaicos de alta eficiência. 
@@ -36,8 +38,10 @@ PowerGenerator.create!(
   weight: 172,
   structure_type: :fibrocimento
 )
+cubage = power_generator.height * power_generator.width * power_generator.height * 300.0
+power_generator.update(cubage: cubage)
 
-PowerGenerator.create!(
+power_generator = PowerGenerator.create!(
   name: 'YC600 Monofásico', 
   description: 'Destinado principalmente a uso familiar, domicilar/doméstico. O APsystems YC600i com EnergyMaxTM é um microinversor grid-tie que garante a máxima eficiência do sistema fotovoltaico. 
                 Altamente confiável e econômico, o YC600i com EnergyMaxTM é otimizado para os mais novos painéis fotovoltaicos de alta eficiência. 
@@ -55,8 +59,10 @@ PowerGenerator.create!(
   weight: 142,
   structure_type: :ceramico
 )
+cubage = power_generator.height * power_generator.width * power_generator.height * 300.0
+power_generator.update(cubage: cubage)
 
-PowerGenerator.create!(
+power_generator = PowerGenerator.create!(
   name: 'POLI HALF CELL', 
   description: 'Destinado principalmente a uso familiar, domicilar/doméstico. Eficiência média da célula de 17% 
                 PID Free
@@ -73,8 +79,10 @@ PowerGenerator.create!(
   weight: 110,
   structure_type: :metalico
 )
+cubage = power_generator.height * power_generator.width * power_generator.height * 300.0
+power_generator.update(cubage: cubage)
 
-PowerGenerator.create!(
+power_generator = PowerGenerator.create!(
   name: 'CELLS MONO PERC', 
   description: 'Destinado principalmente a uso familiar, domicilar/doméstico. Potência no ponto máximo de potência - 365W 
                 Corrente de Curto Circuito - 9,75A
@@ -96,8 +104,10 @@ PowerGenerator.create!(
   weight: 150,
   structure_type: :trapezoidal
 )
+cubage = power_generator.height * power_generator.width * power_generator.height * 300.0
+power_generator.update(cubage: cubage)
 
-PowerGenerator.create!(
+power_generator = PowerGenerator.create!(
   name: 'WEG HÍBRIDO', 
   description: 'Destinado principalmente a uso familiar, domicilar/doméstico. Fácil instalação por apenas uma pessoa com peso de 10,6 kg    
                 Conector CA otimizado para rápida ligação    
@@ -116,8 +126,10 @@ PowerGenerator.create!(
   weight: 268,
   structure_type: :fibrocimento
 )
+cubage = power_generator.height * power_generator.width * power_generator.height * 300.0
+power_generator.update(cubage: cubage)
 
-PowerGenerator.create!(
+power_generator = PowerGenerator.create!(
   name: 'FRONIUS METALICA', 
   description: 'Destinado principalmente a uso comercial, empresarial.  Potência nominal máx. (Pmáx) 335W
                 Tensão operacional ideal (Vmp) 38,10V
@@ -140,8 +152,10 @@ PowerGenerator.create!(
   weight: 155,
   structure_type: :metalico
 )
+cubage = power_generator.height * power_generator.width * power_generator.height * 300.0
+power_generator.update(cubage: cubage)
 
-PowerGenerator.create!(
+power_generator = PowerGenerator.create!(
   name: 'TRIFÁSICO 380V', 
   description: 'Destinado principalmente a uso comercial, empresarial. 3 MPPTs para adaptação versáteis a diferentes tipos ou quantidades de módulos construídos com diferentes alinhamentos    
                 Monitoramento inteligente de 6 strings e 80% de economia de tempo na detecção de falhas    
@@ -159,8 +173,10 @@ PowerGenerator.create!(
   weight: 218,
   structure_type: :metalico
 )
+cubage = power_generator.height * power_generator.width * power_generator.height * 300.0
+power_generator.update(cubage: cubage)
 
-PowerGenerator.create!(
+power_generator = PowerGenerator.create!(
   name: 'FRONIUS TRAPEZOIDAL', 
   description: 'Destinado principalmente a uso comercial, empresarial. Potência no ponto máximo de potência - 365W 
                 Corrente de Curto Circuito - 9,75A
@@ -182,8 +198,10 @@ PowerGenerator.create!(
   weight: 98,
   structure_type: :trapezoidal
 )
+cubage = power_generator.height * power_generator.width * power_generator.height * 300.0
+power_generator.update(cubage: cubage)
 
-PowerGenerator.create!(
+power_generator = PowerGenerator.create!(
   name: 'FRONIUS TRAPEZOIDAL', 
   description: 'Destinado principalmente a uso comercial, empresarial. Potência no ponto máximo de potência - 365W 
                 Corrente de Curto Circuito - 9,75A
@@ -205,8 +223,10 @@ PowerGenerator.create!(
   weight: 172,
   structure_type: :trapezoidal
 )
+cubage = power_generator.height * power_generator.width * power_generator.height * 300.0
+power_generator.update(cubage: cubage)
 
-PowerGenerator.create!(
+power_generator = PowerGenerator.create!(
   name: 'FRONIUS LAJE', 
   description: 'Destinado principalmente a uso familiar, domicilar/doméstico.  Eficiência média da célula de 17% 
                 PID Free
@@ -223,8 +243,10 @@ PowerGenerator.create!(
   weight: 110,
   structure_type: :laje
 )
+cubage = power_generator.height * power_generator.width * power_generator.height * 300.0
+power_generator.update(cubage: cubage)
 
-PowerGenerator.create!(
+power_generator = PowerGenerator.create!(
   name: 'REFUSOL LAJE', 
   description: 'Destinado principalmente a uso familiar, domicilar/doméstico.  Alimentado por 72 Q.ANTUM células solares Q.PEAK proporcionou o máximo resultado da evolução continua do MODULO SOLAR FOTOVOLTAICO 
                 MONOCRISTALINO Q.ANTUM Q.PEAK 365W, com tecnologia alemã Q CELLS e apresentam o novo Q.ANTUM Q.PEAK 365W MONOCRISTALINO MONO PEAK 1500V 
@@ -242,8 +264,10 @@ PowerGenerator.create!(
   weight: 250,
   structure_type: :laje
 )
+cubage = power_generator.height * power_generator.width * power_generator.height * 300.0
+power_generator.update(cubage: cubage)
 
-PowerGenerator.create!(
+power_generator = PowerGenerator.create!(
   name: 'SMA SOLO', 
   description: 'Destinado principalmente a uso familiar, domicilar/doméstico.  Eficiência média da célula de 17% 
                 PID Free
@@ -260,8 +284,10 @@ PowerGenerator.create!(
   weight: 87,
   structure_type: :solo
 )
+cubage = power_generator.height * power_generator.width * power_generator.height * 300.0
+power_generator.update(cubage: cubage)
 
-PowerGenerator.create!(
+power_generator = PowerGenerator.create!(
   name: 'SMA SOLO', 
   description: 'Destinado principalmente a uso familiar, domicilar/doméstico.  Eficiência média da célula de 17% 
                 PID Free
@@ -278,8 +304,10 @@ PowerGenerator.create!(
   weight: 140,
   structure_type: :solo
 )
+cubage = power_generator.height * power_generator.width * power_generator.height * 300.0
+power_generator.update(cubage: cubage)
 
-PowerGenerator.create!(
+power_generator = PowerGenerator.create!(
   name: 'REFUSOL SOLO', 
   description: 'Destinado principalmente a uso familiar, domicilar/doméstico.  Alimentado por 72 Q.ANTUM células solares Q.PEAK proporcionou o máximo resultado da evolução continua do MODULO SOLAR 
                 FOTOVOLTAICO MONOCRISTALINO Q.ANTUM Q.PEAK 365W, com tecnologia alemã Q CELLS e apresentam o novo Q.ANTUM Q.PEAK 365W MONOCRISTALINO 
@@ -297,8 +325,10 @@ PowerGenerator.create!(
   weight: 122,
   structure_type: :solo
 )
+cubage = power_generator.height * power_generator.width * power_generator.height * 300.0
+power_generator.update(cubage: cubage)
 
-PowerGenerator.create!(
+power_generator = PowerGenerator.create!(
   name: 'MONO PERC', 
   description: 'Destinado principalmente a uso comercial, empresarial. Temperatura de operação -25°C a +60°C
                 Emissões sonoras, típicas <25dBa
@@ -324,8 +354,10 @@ PowerGenerator.create!(
   weight: 114,
   structure_type: :solo
 )
+cubage = power_generator.height * power_generator.width * power_generator.height * 300.0
+power_generator.update(cubage: cubage)
 
-PowerGenerator.create!(
+power_generator = PowerGenerator.create!(
   name: 'POLI HALF CELL PRIMO', 
   description: 'Destinado principalmente a uso comercial, empresarial. Eficiência média da célula de 17% 
                 PID Free
@@ -342,8 +374,10 @@ PowerGenerator.create!(
   weight: 118,
   structure_type: :trapezoidal
 )
+cubage = power_generator.height * power_generator.width * power_generator.height * 300.0
+power_generator.update(cubage: cubage)
 
-PowerGenerator.create!(
+power_generator = PowerGenerator.create!(
   name: 'Trina Laje Plus', 
   description: 'Destinado principalmente a uso familiar, domicilar/doméstico.  Eficiência média da célula de 19,7% 
                 144 meia células fotovoltaicas monocristalinas
@@ -360,6 +394,8 @@ PowerGenerator.create!(
   weight: 99,
   structure_type: :laje
 )
+cubage = power_generator.height * power_generator.width * power_generator.height * 300.0
+power_generator.update(cubage: cubage)
 
 # Import to XLS with Freights
 
