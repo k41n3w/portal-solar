@@ -13,6 +13,9 @@
               <p><strong>Peso: </strong><%= power_generator.weight %></p>
               <p><strong>Potência: </strong><%= power_generator.kwp %></p>
               <p><strong>Estrutura: </strong><%= power_generator.structure_type %></p>
+              <strong>Cubagem: </strong><%= power_generator.cubage.round(2) %>
+              <br>
+
               <%= button_to "Verificar Frete", power_generator_path(power_generator.id), method: :get %>
             </div>
           </div>
@@ -34,11 +37,13 @@
             <div class="power_generator-card__body">
               <h2><%= power_generator.name.upcase %></h2>
               <p class="power_generator-card__price"><%= number_to_currency(power_generator.price, unit: "R$ ", precision: 2, :separator => ",", :delimiter => ".") %></p>
-            <p><strong>Descrição: </strong><%= truncate(power_generator.description, :length => 250) %></p>
+              <p><strong>Descrição: </strong><%= truncate(power_generator.description, :length => 250) %></p>
               <p><strong>Peso: </strong><%= power_generator.weight %></p>
               <p><strong>Potência: </strong><%= power_generator.kwp %></p>
               <p><strong>Estrutura: </strong><%= power_generator.structure_type %></p>
-              
+              <strong>Cubagem: </strong><%= power_generator.cubage.round(2) %>
+              <br>
+
               <%= button_to "Verificar Frete", power_generator_path(power_generator.id), method: :get, class: 'power_generator-card__button' %>
             </div>
           </div>
