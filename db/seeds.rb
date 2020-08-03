@@ -5,7 +5,7 @@ power_generator = PowerGenerator.create!(
   description: 'Destinado principalmente a uso comercial, empresarial. 2 MPPTs para adaptação versátil a diferentes tipos ou quantidades de módulos construídos com diferentes alinhamentos    
                 Monitoramento inteligente de 4 strings e 80% de economia de tempo na detecção de falhas    
                 Portas RS485 e USB para conectividade e gerenciamento de dados    
-                Garantia simples.
+                Garantia de 10 anos para o produto e Garantia linear de 25 anos.
                 Display LCD, resolução full HD, gráfico local e monitoramento remoto de ultima geração.', 
   image_url: 'https://marketplace-img-production.s3.amazonaws.com/products/13357/large/Kit-Gerador-de-Energia-Solar-WEG---SIW500H---ST013-18-22.jpg?1546434535', 
   manufacturer: 'WEG', 
@@ -47,7 +47,7 @@ power_generator = PowerGenerator.create!(
                 Altamente confiável e econômico, o YC600i com EnergyMaxTM é otimizado para os mais novos painéis fotovoltaicos de alta eficiência. 
                 O micro inversor possui 600W de potência de saída e duplo MPPT. Com aterramento integrado, sem a necessidade de string box e com a metade 
                 do tempo de instalação, você economiza dinheiro e tempo.
-                Garantia simples.
+                Garantia de 10 anos para o produto e Garantia linear de 25 anos.
                 Display simples.', 
   image_url: 'https://marketplace-img-production.s3.amazonaws.com/products/107646/large/Montagem_YC600.JPG?1566566821', 
   manufacturer: 'Solar Group', 
@@ -93,7 +93,7 @@ power_generator = PowerGenerator.create!(
                 Tolerância de potências +5W
                 Desempenho mínimo sob condições de teste padrão STC (1000 W/m², 25 °C, espectro AM 1,5 G)
                 Garantia simples.
-                Display simples.', 
+                Display LCD, resolução full HD, gráfico local e monitoramento remoto de ultima geração.', 
   image_url: 'https://marketplace-img-production.s3.amazonaws.com/products/13500/large/20190103-225-1sblgyr.?1546504464', 
   manufacturer: 'Q CELLS', 
   price: 13000.35,
