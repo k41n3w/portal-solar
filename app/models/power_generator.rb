@@ -13,4 +13,29 @@ class PowerGenerator < ApplicationRecord
     solo
     trapezoidal
   ]
+
+  def self.find_principal_answers(current_user)
+    @power_generators = PowerGenerator.all
+
+    all_anwers = []
+    all_anwers << current_user.question_1
+    all_anwers << current_user.question_2
+    all_anwers << current_user.question_3
+
+    all_anwers.each do |answer|
+      @power_generators = @power_generators.where("description ILIKE ?", "%#{answer}%")
+    end
+
+    @power_generators
+  end
+
+  def self.find_max_value(answer, attribute, power_generators)
+    max_value = answer.delete('.').to_f
+  
+    power_generators.where("#{attribute} <= ?", max_value)
+  end
+
+  def self.find_structure_type(answer, perfect_match)
+    perfect_match.where(structure_type: answer)
+  end
 end
