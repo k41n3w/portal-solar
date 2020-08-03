@@ -14,6 +14,8 @@
         <br>
         <strong>Estrutura: </strong><%= @power_generator.structure_type %>
         <br>
+        <strong>Cubagem: </strong><%= @power_generator.cubage %>
+        <br>
 
         <br>
         <% if @cost.nil? %>
@@ -23,8 +25,8 @@
             <%= submit_tag("Buscar cep") %>
           <% end %>
         <% else %>
-          <h2>Custo do frete:</h2>
-          <%= number_to_currency(@cost.cost, unit: "R$ ", precision: 2, :separator => ",", :delimiter => ".")  %>
+          <h2>Custo do frete para: <%= @address[:city] %> - <%= @address[:state]%></h2> 
+            <p class="power_generator-card__price"><%= number_to_currency(@cost.cost, unit: "R$ ", precision: 2, :separator => ",", :delimiter => ".")  %></p>
         <% end %>
       </div>
     </div>

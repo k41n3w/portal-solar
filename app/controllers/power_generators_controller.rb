@@ -11,9 +11,9 @@ class PowerGeneratorsController < ApplicationController
       return if params[:cep].size < 9
       
       finder = Correios::CEP::AddressFinder.new
-      address = finder.get(params[:cep])
+      @address = finder.get(params[:cep])
 
-      @cost = Freight.where(state: address[:state])
+      @cost = Freight.where(state: @address[:state])
 
       bigger = @power_generator.cubage if @power_generator.cubage < @power_generator.weight
       bigger = @power_generator.weight if @power_generator.weight < @power_generator.cubage
