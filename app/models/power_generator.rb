@@ -38,4 +38,25 @@ class PowerGenerator < ApplicationRecord
   def self.find_structure_type(answer, perfect_match)
     perfect_match.where(structure_type: answer)
   end
+
+  def self.find_cep(cep)
+    finder = Correios::CEP::AddressFinder.new
+    finder.get(cep)
+  end
+
+  def self.validate_and_find_cep(cep, power_generator)
+    return nil if cep.nil?
+    return nil if cep.size != 9
+  
+    @address = PowerGenerator.find_cep(cep)
+    
+    @cost = Freight.where(state: @address[:state])
+  
+    bigger = power_generator.cubage if power_generator.cubage < power_generator.weight
+    bigger = power_generator.weight if power_generator.weight < power_generator.cubage
+  
+    @cost = @cost.where("weight_max >= ?", bigger).first
+    finder = Correios::CEP::AddressFinder.new
+    finder.get(cep)
+  end
 end

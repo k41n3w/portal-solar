@@ -35,4 +35,26 @@ RSpec.describe PowerGenerator, type: :model do
 			expect(PowerGenerator.find_structure_type(user.question_7, perfect_match).count).to eq(1)
 		end
 	end
+
+	describe 'validate_and_find_cep(cep)', :vcr do
+		let!(:power_generator) { create(:power_generator) }
+		
+		context 'with correct cep' do
+			it 'expect a correct return for cep' do
+				expect(PowerGenerator.validate_and_find_cep('13770-000', power_generator)).not_to be_nil
+			end
+		end
+
+		context 'with correct cep' do
+			it 'expect a correct return for cep' do
+				expect(PowerGenerator.validate_and_find_cep('13770-00', power_generator)).to be_nil
+			end
+		end
+	end
+
+	describe 'find_cep(cep)', :vcr do
+		it 'expect a correct return for cep' do
+			expect(PowerGenerator.find_cep('13770-000')).not_to be_nil
+		end
+	end
 end

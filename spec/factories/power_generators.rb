@@ -11,5 +11,6 @@ FactoryBot.define do
     lenght { '1.8' }
     weight { '99' }
     structure_type { :laje }
+    cubage { '100.0' }
   end
 end
