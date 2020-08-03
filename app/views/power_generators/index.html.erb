@@ -13,7 +13,7 @@
           <div class="power_generator-card__body">
             <h2><%= power_generator.name.upcase %></h2>
             <p class="power_generator-card__price"><%= number_to_currency(power_generator.price, unit: "R$ ", precision: 2, :separator => ",", :delimiter => ".") %></p>
-            <p><strong>Descrição: </strong><%= power_generator.description %></p>
+            <p><strong>Descrição: </strong><%= truncate(power_generator.description, :length => 250) %></p>
             <p><strong>Peso: </strong><%= power_generator.weight %></p>
             <p><strong>Potência: </strong><%= power_generator.kwp %></p>
             <p><strong>Estrutura: </strong><%= power_generator.structure_type %></p>
