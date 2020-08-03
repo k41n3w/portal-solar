@@ -4,11 +4,6 @@ class PowerGeneratorsController < ApplicationController
   before_action :set_power_generator, only: %i[show]
 
   def index
-    page = params[:page] || 1
-
-    @q = PowerGenerator.ransack(params[:q])
-
-    @power_generators = @q.result(distinct: true).paginate(page: page, per_page: 6)
   end
 
   def show

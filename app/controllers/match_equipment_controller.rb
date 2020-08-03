@@ -1,9 +1,9 @@
 class MatchEquipmentController < ApplicationController
   def index
     return redirect_to new_user_registration_path if current_user.nil?
-    
+
     find_principal_answers
-    
+ 
     find_max_value(current_user.question_4, 'price')
     find_max_value(current_user.question_5, 'weight')
     find_max_value(current_user.question_6, 'kwp')
@@ -14,7 +14,5 @@ class MatchEquipmentController < ApplicationController
 
     @q = @power_generators.ransack(params[:q])
     @q = @perfect_match.ransack(params[:q])
-
-    @power_generators = @q.result(distinct: true).paginate(page: page, per_page: 6)
   end
 end
