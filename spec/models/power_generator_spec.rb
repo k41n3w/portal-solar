@@ -18,8 +18,6 @@ RSpec.describe PowerGenerator, type: :model do
 		let!(:power_generator_2) { create(:power_generator, kwp: '7.0') }
 		
 		it 'expect some power_generators' do
-			power_generators = []
-
 			power_generators = PowerGenerator.all
 
 			expect(PowerGenerator.find_max_value(user.question_6, 'kwp', power_generators).count).to eq(1)
@@ -32,8 +30,6 @@ RSpec.describe PowerGenerator, type: :model do
 		let!(:power_generator_2) { create(:power_generator, structure_type: 'laje') }
 		
 		it 'expect some power_generators' do
-			power_generators = []
-
 			perfect_match = PowerGenerator.all
 
 			expect(PowerGenerator.find_structure_type(user.question_7, perfect_match).count).to eq(1)

@@ -18,8 +18,8 @@
 
     <div class="searcher gradient">
       <%= search_form_for @q do |f| %>
-        <%= f.label :'Buscar Por Nome ou kWp' %>
-        <%= f.search_field :name_or_kwp_eq %>
+        <%= f.label :'Buscar Por Nome' %>
+        <%= f.search_field :name_cont %>
         <%= f.submit "Buscar" %>
       <% end %>
 
