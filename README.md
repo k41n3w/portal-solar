@@ -18,4 +18,4 @@ If you run rspec suite test, inside the container type:
 rspec
 ```
 
-Heroku deploy url: https://solar-sell.herokuapp.com/
+CORRECT LINK TO HEROKU DEPLOY: https://portal-solar-v2.herokuapp.com/
