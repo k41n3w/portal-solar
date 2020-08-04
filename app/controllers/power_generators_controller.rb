@@ -7,7 +7,7 @@ class PowerGeneratorsController < ApplicationController
   end
 
   def show
-    if (PowerGenerator.validate_cep(params[:cep]) == true && params[:cep] != nil)
+    if (PowerGenerator.validate_cep(params[:cep]) && params[:cep] != nil)
       @address = PowerGenerator.find_cep(params[:cep])
 
       @cost = PowerGenerator.find_cost(@power_generator, @address[:state])

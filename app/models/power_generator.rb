@@ -40,9 +40,7 @@ class PowerGenerator < ApplicationRecord
   end
 
   def self.validate_cep(cep)
-    return nil if cep.nil?
-    return nil if cep.size != 9
-    true
+    cep && cep.size == 9
   end
 
   def self.find_cep(cep)
@@ -52,7 +50,8 @@ class PowerGenerator < ApplicationRecord
 
   def self.find_cost(power_generator, address)
     cost = Freight.where(state: address)
-    bigger = [power_generator.cubage, power_generator.weight].max
-    cost.where("weight_max >= ?", bigger).first
+    smaller = [power_generator.cubage, power_generator.weight].min
+
+    cost.where("weight_max >= ?", smaller).first
   end
 end

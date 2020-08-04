@@ -4,7 +4,7 @@ require 'factories/power_generators'
 require 'factories/freights'
 
 RSpec.describe PowerGenerator, type: :model do
-	describe '#find_principal_generators(current_user)' do
+	describe '.find_principal_generators(current_user)' do
 		let!(:user) { create(:user) }
 		let!(:power_generator) { create(:power_generator) }
 		
@@ -13,7 +13,7 @@ RSpec.describe PowerGenerator, type: :model do
 		end
 	end
 
-	describe '#find_max_value(answer, attribute, power_generators)' do
+	describe '.find_max_value(answer, attribute, power_generators)' do
 		let!(:user) { create(:user, question_6: '9.0') }
 		let!(:power_generator_1) { create(:power_generator, kwp: '100.0') }
 		let!(:power_generator_2) { create(:power_generator, kwp: '7.0') }
@@ -25,7 +25,7 @@ RSpec.describe PowerGenerator, type: :model do
 		end
 	end
 
-	describe '#find_structure_type(answer, perfect_match)' do
+	describe '.find_structure_type(answer, perfect_match)' do
 		let!(:user) { create(:user, question_7: 'metalico') }
 		let!(:power_generator_1) { create(:power_generator, structure_type: 'metalico') }
 		let!(:power_generator_2) { create(:power_generator, structure_type: 'laje') }
@@ -37,7 +37,7 @@ RSpec.describe PowerGenerator, type: :model do
 		end
 	end
 
-	describe '#validate_cep' do
+	describe '.validate_cep' do
 		context 'with value nil' do
 			it { expect(PowerGenerator.validate_cep(nil)).to be_nil }
 		end
@@ -51,11 +51,11 @@ RSpec.describe PowerGenerator, type: :model do
 		end
 	end
 
-	describe '#find_cep(cep)', :vcr do
+	describe '.find_cep(cep)', :vcr do
 		it { expect(PowerGenerator.validate_cep('13770-000')).to be }
 	end
 
-	describe '#find_cost(power_generator, address)' do
+	describe '.find_cost(power_generator, address)' do
 		let!(:power_generator) { create(:power_generator, cubage: 1.0) }
 		let!(:freight) { create(:freight, weight_max: 2.0, state: 'MG') }
 
