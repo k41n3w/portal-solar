@@ -17,7 +17,7 @@ class User < ApplicationRecord
   end
 
   def self.question_4
-    ['10.000,00', '25.000,00', '50.000,00', '100.000,00']
+    ['10.000,00', '25.000,00', '50.000,00', '100.000,00', '200.000,00']
   end
 
   def self.question_5
