@@ -14,7 +14,7 @@ class PowerGenerator < ApplicationRecord
     trapezoidal
   ]
 
-  def self.find_principal_answers(current_user)
+  def self.find_principal_generators(current_user)
     @power_generators = PowerGenerator.all
 
     all_anwers = []
@@ -39,23 +39,20 @@ class PowerGenerator < ApplicationRecord
     perfect_match.where(structure_type: answer)
   end
 
+  def self.validate_cep(cep)
+    return nil if cep.nil?
+    return nil if cep.size != 9
+    true
+  end
+
   def self.find_cep(cep)
     finder = Correios::CEP::AddressFinder.new
     finder.get(cep)
   end
 
-  def self.validate_and_find_cep(cep, power_generator)
-    return nil if cep.nil?
-    return nil if cep.size != 9
-  
-    @address = PowerGenerator.find_cep(cep)
-    
-    @cost = Freight.where(state: @address[:state])
-  
+  def self.find_cost(power_generator, address)
+    cost = Freight.where(state: address)
     bigger = [power_generator.cubage, power_generator.weight].max
-  
-    @cost = @cost.where("weight_max >= ?", bigger).first
-    finder = Correios::CEP::AddressFinder.new
-    finder.get(cep)
+    cost.where("weight_max >= ?", bigger).first
   end
 end

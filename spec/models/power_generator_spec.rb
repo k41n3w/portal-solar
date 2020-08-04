@@ -1,18 +1,19 @@
 require 'rails_helper'
 require 'factories/users'
 require 'factories/power_generators'
+require 'factories/freights'
 
 RSpec.describe PowerGenerator, type: :model do
-	context 'find_principal_answers(current_user)' do
+	describe '#find_principal_generators(current_user)' do
 		let!(:user) { create(:user) }
 		let!(:power_generator) { create(:power_generator) }
 		
 		it 'expect some power_generators' do
-			expect(PowerGenerator.find_principal_answers(user)).not_to be_nil
+			expect(PowerGenerator.find_principal_generators(user)).not_to be_nil
 		end
 	end
 
-	context 'find_max_value(answer, attribute, power_generators)' do
+	describe '#find_max_value(answer, attribute, power_generators)' do
 		let!(:user) { create(:user, question_6: '9.0') }
 		let!(:power_generator_1) { create(:power_generator, kwp: '100.0') }
 		let!(:power_generator_2) { create(:power_generator, kwp: '7.0') }
@@ -24,7 +25,7 @@ RSpec.describe PowerGenerator, type: :model do
 		end
 	end
 
-	context 'find_structure_type(answer, perfect_match)' do
+	describe '#find_structure_type(answer, perfect_match)' do
 		let!(:user) { create(:user, question_7: 'metalico') }
 		let!(:power_generator_1) { create(:power_generator, structure_type: 'metalico') }
 		let!(:power_generator_2) { create(:power_generator, structure_type: 'laje') }
@@ -36,25 +37,31 @@ RSpec.describe PowerGenerator, type: :model do
 		end
 	end
 
-	describe 'validate_and_find_cep(cep)', :vcr do
-		let(:power_generator) { build_stubbed(:power_generator) }
-		
-		context 'with correct cep' do
-			it 'expect a correct return for cep' do
-				expect(PowerGenerator.validate_and_find_cep('13770-000', power_generator)).not_to be_nil
-			end
+	describe '#validate_cep' do
+		context 'with value nil' do
+			it { expect(PowerGenerator.validate_cep(nil)).to be_nil }
 		end
 
-		context 'with correct cep' do
-			it 'expect a correct return for cep' do
-				expect(PowerGenerator.validate_and_find_cep('13770-00', power_generator)).to be_nil
-			end
+		context 'with char size count != 9' do
+			it { expect(PowerGenerator.validate_cep(nil)).to be_nil }
+		end
+
+		context 'with a valid cep' do
+			it { expect(PowerGenerator.validate_cep('13770-000')).to be_truthy }
 		end
 	end
 
-	describe 'find_cep(cep)', :vcr do
+	describe '#find_cep(cep)', :vcr do
+		it { expect(PowerGenerator.validate_cep('13770-000')).to be }
+	end
+
+	describe '#find_cost(power_generator, address)' do
+		let!(:power_generator) { create(:power_generator, cubage: 1.0) }
+		let!(:freight) { create(:freight, weight_max: 2.0, state: 'MG') }
+
+
 		it 'expect a correct return for cep' do
-			expect(PowerGenerator.find_cep('13770-000')).not_to be_nil
+			expect(PowerGenerator.find_cost(power_generator, 'MG')).not_to be_nil
 		end
 	end
 end
