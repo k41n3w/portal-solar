@@ -62,4 +62,12 @@ class PowerGenerator < ApplicationRecord
   def self.ransackable_scopes(auth_object = nil)
     %i(name_ilike)
   end
+
+  def self.find_perfect_match(current_user, power_generators)
+    perfect_match = PowerGenerator.find_max_value(current_user.question_4, 'price', power_generators)
+    perfect_match = PowerGenerator.find_max_value(current_user.question_5, 'weight', perfect_match)
+    perfect_match = PowerGenerator.find_max_value(current_user.question_6, 'kwp', perfect_match)
+
+    PowerGenerator.find_structure_type(current_user.question_7, perfect_match)
+  end
 end
