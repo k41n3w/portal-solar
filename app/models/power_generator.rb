@@ -54,4 +54,12 @@ class PowerGenerator < ApplicationRecord
 
     cost.where("weight_max >= ?", smaller).first
   end
+
+  def self.name_ilike(name)
+    PowerGenerator.where("name ILIKE name", name: "%name%")
+  end
+
+  def self.ransackable_scopes(auth_object = nil)
+    %i(name_ilike)
+  end
 end
