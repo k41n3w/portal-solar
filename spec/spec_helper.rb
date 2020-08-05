@@ -6,7 +6,8 @@ if ENV['COVERAGE']
     add_filter [
       'app/channels',
       'app/jobs',
-      'app/mailers'
+      'app/mailers',
+      'spec'
     ]
   end
   puts 'required simplecov'

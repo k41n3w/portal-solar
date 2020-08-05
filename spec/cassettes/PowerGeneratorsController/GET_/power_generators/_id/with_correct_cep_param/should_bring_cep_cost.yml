@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://apps.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+        xmlns:cli="http://cliente.bean.master.sigep.bsb.correios.com.br/"><soapenv:Header
+        /><soapenv:Body><cli:consultaCEP><cep>13770-000</cep></cli:consultaCEP></soapenv:Body></soapenv:Envelope>
+    headers:
+      Content-Type:
+      - text/xml; charset=utf-8
+      User-Agent:
+      - correios-cep/0.8.0
+      Connection:
+      - close
+      Host:
+      - apps.correios.com.br
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 05 Aug 2020 03:14:13 GMT
+      Server:
+      - Apache/2.4.10 (Debian)
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '354'
+      Vary:
+      - Accept-Encoding,User-Agent
+      Set-Cookie:
+      - app-%3FINTERNO%3Fpool_proxy_app_sigep_443=PNCCAIAK; Expires=Wed, 05-Aug-2020
+        03:34:13 GMT; Path=/
+      - sto-id-%3FEXTERNO_2%3Fpool_Proxy_reverso_Apps_443=KPABKIMA; Expires=Wed, 05-Aug-2020
+        03:34:13 GMT; Path=/
+    body:
+      encoding: UTF-8
+      string: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><ns2:consultaCEPResponse
+        xmlns:ns2="http://cliente.bean.master.sigep.bsb.correios.com.br/"><return><bairro></bairro><cep>13770000</cep><cidade>Caconde</cidade><complemento2></complemento2><end></end><uf>SP</uf></return></ns2:consultaCEPResponse></soap:Body></soap:Envelope>
+  recorded_at: Wed, 05 Aug 2020 03:14:14 GMT
+recorded_with: VCR 6.0.0
