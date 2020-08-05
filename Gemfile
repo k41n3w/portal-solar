@@ -21,10 +21,6 @@ gem 'webmock'
 gem 'webpacker', '~> 4.0'
 gem 'will_paginate', '~> 3.1.0'
 
-group :development do
-  gem 'rubocop', require: false
-end
-
 source 'https://rails-assets.org' do
   gem 'rails-assets-jquery'
 end
@@ -45,6 +41,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
+  gem 'rubocop', require: false
+  gem 'simplecov', require: false, group: :test
 end
 
 group :test do

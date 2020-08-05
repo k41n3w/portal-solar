@@ -18,4 +18,16 @@ If you run rspec suite test, inside the container type:
 rspec
 ```
 
-CORRECT LINK TO HEROKU DEPLOY: https://portal-solar-v2.herokuapp.com/
+If you run rubocop bettercode test suite, inside the container type:
+```
+rubocop
+```
+
+If you run simplecov to check tests status, inside the container type:
+```
+COVERAGE=true rspec
+```
+
+To check the simplecov reports, go to coverage folder on root_path, open index.html with your browser. Today we've a 73.08% of testes coverage. 
+
+LINK TO HEROKU DEPLOY: https://portal-solar-v2.herokuapp.com/
