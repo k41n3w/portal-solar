@@ -3,6 +3,8 @@
 require 'simplecov'
 require 'simplecov-console'
 
+SimpleCov.formatter = SimpleCov::Formatter::Console
+
 SimpleCov.start do
   add_filter [
     'app/channels',
@@ -12,7 +14,6 @@ SimpleCov.start do
   ]
 end
 
-SimpleCov.formatter = SimpleCov::Formatter::Console
 
 puts 'required simplecov'
 
