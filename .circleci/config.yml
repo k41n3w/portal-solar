@@ -1,28 +1,53 @@
+# Ruby CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-ruby/ for more details
+#
 version: 2
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.5.3-node-browsers
-        environment:
+       - image: circleci/2.6.3
+         environment:
           RAILS_ENV: test
-      - image: circleci/postgres:9.5-alpine
+       - image: circleci/postgres
         environment:
-          POSTGRES_USER: circleci-demo-ruby
-          POSTGRES_DB: rails_blog
-          POSTGRES_PASSWORD: ""
+          POSTGRES_USER: postgres
+          POSTGRES_DB: portal_solar_test
+    working_directory: ~/ttt_ruby
     steps:
       - checkout
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "Gemfile.lock" }}
+          - v1-dependencies-
+      - run: sudo apt-get install ruby-full cmake
       - run:
-          name: Bundle Install
-          command: bundle check || bundle install
+          name: install dependencies
+          command: |
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+      - run: bundle exec rake db:create
+      - run: bundle exec rake db:schema:load
       - run:
-          name: Wait for DB
-          command: dockerize -wait tcp://localhost:5432 -timeout 1m
+          name: rubocop
+          command: |
+            bundle exec rubocop
       - run:
-          name: Database setup
-          command: bin/rails db:schema:load --trace
-      - run:
-          name: Run Tests
-          command: bin/rails test
+          name: run tests
+          command: |
+            mkdir /tmp/test-results
+            TEST_FILES="$(circleci tests glob "spec/*_spec.rb" | circleci tests split --split-by=timings)"
+            
+            bundle exec rspec --format progress \
+                            --format RspecJunitFormatter \
+                            --out /tmp/test-results/rspec.xml \
+                            --format progress \
+                            $TEST_FILES
+      - store_test_results:
+          path: /tmp/test-results
       - store_artifacts:
-          path: coverage
+          path: /tmp/test-results
+          destination: test-results
