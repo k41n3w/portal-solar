@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -21,14 +23,14 @@ class User < ApplicationRecord
   end
 
   def self.question_5
-    ['100', '200', '300']
+    %w[100 200 300]
   end
 
   def self.question_6
-    ['5', '15', '50']
+    %w[5 15 50]
   end
 
   def self.question_7
-    ['metalico', 'ceramico', 'fibrocimento', 'laje', 'solo', 'trapezoidal']
+    %w[metalico ceramico fibrocimento laje solo trapezoidal]
   end
 end

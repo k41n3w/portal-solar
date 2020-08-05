@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :power_generator do
-    name     { FFaker::Name.name }
+    name { FFaker::Name.name }
     description { FFaker::AWS.product_description }
     image_url { FFaker::Image.url }
     manufacturer { FFaker::Name.name }

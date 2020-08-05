@@ -16,11 +16,11 @@ RSpec.describe 'PowerGeneratorsController', type: :request do
     subject do
       response
     end
-    
+
     before do
       get(root_path)
     end
-    
+
     it 'must respond with status code :ok (200)' do
       is_expected.to have_http_status(:ok)
     end
@@ -37,11 +37,11 @@ RSpec.describe 'PowerGeneratorsController', type: :request do
     subject do
       response
     end
-    
+
     before do
       get(power_generator_path(power_generator.id))
     end
-    
+
     it 'must respond with status code :ok (200)' do
       is_expected.to have_http_status(:ok)
     end

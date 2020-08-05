@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MatchEquipmentController < ApplicationController
   def index
     return redirect_to new_user_registration_path if current_user.nil?

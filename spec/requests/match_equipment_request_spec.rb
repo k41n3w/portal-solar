@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 require 'factories/users'
 require 'factories/power_generators'
 
-RSpec.describe "MatchEquipments", type: :request do
+RSpec.describe 'MatchEquipments', type: :request do
   describe 'root GET /' do
     context 'with a perfect match on list' do
       let!(:user) { create(:user) }
@@ -16,11 +18,11 @@ RSpec.describe "MatchEquipments", type: :request do
       subject do
         response
       end
-      
+
       before do
         get(match_equipment_index_path)
       end
-      
+
       it 'must respond with status code :ok (200)' do
         is_expected.to have_http_status(:ok)
       end
@@ -32,7 +34,7 @@ RSpec.describe "MatchEquipments", type: :request do
 
     context 'with none item on list' do
       it { expect(@power_generators).not_to be }
-      
+
       it { expect(@perfect_matcht).not_to be }
     end
   end

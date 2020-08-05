@@ -1,13 +1,14 @@
+# frozen_string_literal: true
+
 require 'correios-cep'
 
 class PowerGeneratorsController < ApplicationController
   before_action :set_power_generator, only: %i[show]
 
-  def index
-  end
+  def index; end
 
   def show
-    if (PowerGenerator.validate_cep(params[:cep]) && params[:cep] != nil)
+    if PowerGenerator.validate_cep(params[:cep]) && !params[:cep].nil?
       @address = PowerGenerator.find_cep(params[:cep])
 
       @cost = PowerGenerator.find_cost(@power_generator, @address[:state])
