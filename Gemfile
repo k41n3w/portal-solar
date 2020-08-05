@@ -20,6 +20,8 @@ gem 'vcr'
 gem 'webmock'
 gem 'webpacker', '~> 4.0'
 gem 'will_paginate', '~> 3.1.0'
+gem 'simplecov', require: false, group: :test
+gem 'codecov', require: false, group: :test
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-jquery'
@@ -47,8 +49,6 @@ end
 group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
-  gem 'simplecov', require: false
-  gem 'simplecov-console'
   gem 'webdrivers'
 end
 

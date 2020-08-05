@@ -1,24 +1,20 @@
-env: ~
-global: 
-  - CC_TEST_REPORTER_ID=9871ff36ce0be78e9e2649fb580f48b49c4ec4800a4e491bb6198e99b29d2796
+language: ruby
+
 services:
   - postgresql
-test:
-  adapter: postgresql
-  database: portal_solar_test
-language: ruby
-rvm: 
-  - "2.6.3"
-before_install: "gem install bundler -v 1.16.1"
-notifications: 
-  - false
-before_script: 
-  - "curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter"
-  - "chmod +x ./cc-test-reporter"
-  - "./cc-test-reporter before-build"
-  - psql -c 'create database portal_solar_test;' -U postgres
-scripts:
-  - "rake db:test:prepare"
-  - "bundle exec rspec spec"
-after_script: 
-  - "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
+
+stages:
+  - test
+
+before_install:
+  - cp config/database.travis.yml config/database.yml
+
+install:
+  - bundle install
+  - rails db:create db:migrate
+
+jobs:
+  include:
+    - stage: test
+      script: rubocop
+      script: rspec
