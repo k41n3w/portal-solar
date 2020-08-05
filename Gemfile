@@ -38,11 +38,11 @@ end
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'pry', '~> 0.12.2'
+  gem 'rubocop', require: false
+  gem 'simplecov', require: false, group: :test
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
-  gem 'rubocop', require: false
-  gem 'simplecov', require: false, group: :test
 end
 
 group :test do
