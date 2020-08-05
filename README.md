@@ -1,4 +1,4 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/70ad0217d63f10aac886/maintainability)](https://codeclimate.com/github/kaioramos/portal-solar)
+[![Maintainability](https://api.codeclimate.com/v1/badges/7120af2306b15e9ccd9d/maintainability)](https://codeclimate.com/github/kaioramos/portal-solar/maintainability)
 
 Commands to make run this project:
 ```
