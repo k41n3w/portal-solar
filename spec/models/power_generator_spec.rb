@@ -69,7 +69,6 @@ RSpec.describe PowerGenerator, type: :model do
   describe '.name_ilike(name)' do
     let!(:power_generator) { create(:power_generator, description: 'power_generator_1') }
 
-
-    it { expect(PowerGenerator.name_ilike('power_generator_1').count ).to eq(1) }
+    it { expect(PowerGenerator.name_ilike('power_generator_1').count).to eq(1) }
   end
 end

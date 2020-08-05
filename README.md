@@ -28,6 +28,6 @@ If you run simplecov to check tests status, inside the container type:
 COVERAGE=true rspec
 ```
 
-To check the simplecov reports, go to coverage folder on root_path, open index.html with your browser. Today we've a 96.84% covered. 
+To check the simplecov reports, go to coverage folder on root_path, open index.html with your browser. Today we've a 99.28% covered. 
 
 LINK TO HEROKU DEPLOY: https://portal-solar-v2.herokuapp.com/
