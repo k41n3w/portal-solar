@@ -7,10 +7,12 @@ class ApplicationController < ActionController::Base
 
   before_action :set_power_generators
 
+  # :nocov:
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:email, :password, :question_1, :question_2, :question_3, :question_4, :question_5, :question_6, :question_7) }
     devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:email, :password, :current_password, :question_1, :question_2, :question_3, :question_4, :question_5, :question_6, :question_7) }
   end
+  # :nocov:
 
   def set_power_generators
     page = params[:page] || 1

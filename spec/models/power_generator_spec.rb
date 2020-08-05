@@ -54,7 +54,7 @@ RSpec.describe PowerGenerator, type: :model do
   end
 
   describe '.find_cep(cep)', :vcr do
-    it { expect(PowerGenerator.validate_cep('13770-000')).to be }
+    it { expect(PowerGenerator.find_cep('13770-000')).to be }
   end
 
   describe '.find_cost(power_generator, address)' do
@@ -64,5 +64,12 @@ RSpec.describe PowerGenerator, type: :model do
     it 'expect a correct return for cep' do
       expect(PowerGenerator.find_cost(power_generator, 'MG')).not_to be_nil
     end
+  end
+
+  describe '.name_ilike(name)' do
+    let!(:power_generator) { create(:power_generator, description: 'power_generator_1') }
+
+
+    it { expect(PowerGenerator.name_ilike('power_generator_1').count ).to eq(1) }
   end
 end
