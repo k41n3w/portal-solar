@@ -33,8 +33,6 @@ group :development, :test do
   gem 'factory_bot'
   gem 'ffaker'
   gem 'rspec-rails', '~> 4.0.1'
-  gem 'simplecov', require: false
-  gem 'simplecov-console'
 end
 
 group :development do
@@ -49,6 +47,8 @@ end
 group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
+  gem 'simplecov', require: false
+  gem 'simplecov-console'
   gem 'webdrivers'
 end
 
