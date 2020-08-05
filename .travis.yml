@@ -1,6 +1,11 @@
 env: ~
 global: 
   - CC_TEST_REPORTER_ID=9871ff36ce0be78e9e2649fb580f48b49c4ec4800a4e491bb6198e99b29d2796
+services:
+  - postgresql
+test:
+  adapter: postgresql
+  database: portal_solar_test
 language: ruby
 rvm: 
   - "2.6.3"
