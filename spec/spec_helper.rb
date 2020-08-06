@@ -7,7 +7,7 @@ require 'coveralls'
 Coveralls.wear!
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter([
-  SimpleCov::Formatter::Codecov
+  SimpleCov::Formatter::Codecov,
   Coveralls::SimpleCov::Formatter
 ]) unless ENV['CI'].nil?
 
