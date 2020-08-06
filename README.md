@@ -1,9 +1,7 @@
 # Portal Solar
 > Indica equipamentos e calcula frete.
 
-[![Build Status](https://travis-ci.com/kaioramos/portal-solar.svg?branch=master)](https://travis-ci.com/kaioramos/portal-solar)
-
-[![Maintainability](https://api.codeclimate.com/v1/badges/7120af2306b15e9ccd9d/maintainability)](https://codeclimate.com/github/kaioramos/portal-solar/maintainability)
+[![Build Status](https://travis-ci.com/kaioramos/portal-solar.svg?branch=master)](https://travis-ci.com/kaioramos/portal-solar)[![Maintainability](https://api.codeclimate.com/v1/badges/7120af2306b15e9ccd9d/maintainability)](https://codeclimate.com/github/kaioramos/portal-solar/maintainability)
 
 Commands to make run this project:
 ```
