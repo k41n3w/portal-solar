@@ -22,7 +22,6 @@ gem 'webpacker', '~> 4.0'
 gem 'will_paginate', '~> 3.1.0'
 gem 'simplecov', require: false, group: :test
 gem 'codecov', require: false, group: :test
-gem 'coveralls', require: false
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-jquery'
