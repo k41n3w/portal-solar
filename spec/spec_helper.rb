@@ -3,6 +3,13 @@
 require 'factory_bot'
 require 'simplecov'
 require 'codecov'
+require 'coveralls'
+Coveralls.wear!
+
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter([
+  SimpleCov::Formatter::Codecov
+  Coveralls::SimpleCov::Formatter
+]) unless ENV['CI'].nil?
 
 SimpleCov.start 'rails' do
   add_filter 'app/channels'
@@ -12,8 +19,6 @@ SimpleCov.start 'rails' do
 end
 
 SimpleCov.minimum_coverage 95
-
-SimpleCov.formatter = SimpleCov::Formatter::Codecov unless ENV['CI'].nil?
 
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
