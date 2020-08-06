@@ -6,6 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.3'
 
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'codecov', require: false, group: :test
 gem 'correios-cep'
 gem 'devise'
 gem 'jbuilder', '~> 2.7'
@@ -15,13 +16,12 @@ gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2'
 gem 'ransack'
 gem 'sass-rails', '~> 5'
+gem 'simplecov', require: false, group: :test
 gem 'turbolinks', '~> 5'
 gem 'vcr'
 gem 'webmock'
 gem 'webpacker', '~> 4.0'
 gem 'will_paginate', '~> 3.1.0'
-gem 'simplecov', require: false, group: :test
-gem 'codecov', require: false, group: :test
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-jquery'

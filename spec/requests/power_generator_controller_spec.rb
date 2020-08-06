@@ -66,7 +66,7 @@ RSpec.describe 'PowerGeneratorsController', type: :request do
 
       it 'should bring cep cost' do
         expect(response.body).to include('Custo do frete para:')
-      end  
+      end
     end
 
     context 'with incorrect cep param' do
