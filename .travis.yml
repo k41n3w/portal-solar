@@ -16,6 +16,7 @@ install:
 
 jobs:
   include:
-    - stage: test
+    - stage: rubocop
       script: rubocop
+    - stage: test
       script: rspec
