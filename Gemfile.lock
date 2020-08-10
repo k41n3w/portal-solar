@@ -63,7 +63,7 @@ GEM
       xpath (~> 3.2)
     childprocess (1.0.1)
       rake (< 13.0)
-    codecov (0.1.7)
+    codecov (0.1.6)
       json
       simplecov
       url
@@ -303,7 +303,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
-  codecov (< 0.1.8)
+  codecov (< 0.1.7)
   correios-cep
   devise
   factory_bot
