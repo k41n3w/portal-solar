@@ -3,10 +3,11 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.3'
+ruby '2.6.6'
 
+gem "audited", "~> 4.9"
 gem 'bootsnap', '>= 1.4.2', require: false
-gem 'codecov', '< 0.1.7', require: false, group: :test
+gem 'codecov', require: false, group: 'test'
 gem 'correios-cep'
 gem 'devise'
 gem 'jbuilder', '~> 2.7'

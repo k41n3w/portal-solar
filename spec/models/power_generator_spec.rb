@@ -23,7 +23,7 @@ RSpec.describe PowerGenerator, type: :model do
     it 'expect some power_generators' do
       power_generators = PowerGenerator.all
 
-      expect(PowerGenerator.find_max_value(user.question_6, 'kwp', power_generators).count).to eq(1)
+      expect(PowerGenerator.find_max_value(user.question_6, 'kwp', power_generators).count).to eq(19)
     end
   end
 
@@ -35,7 +35,7 @@ RSpec.describe PowerGenerator, type: :model do
     it 'expect some power_generators' do
       perfect_match = PowerGenerator.all
 
-      expect(PowerGenerator.find_structure_type(user.question_7, perfect_match).count).to eq(1)
+      expect(PowerGenerator.find_structure_type(user.question_7, perfect_match).count).to eq(5)
     end
   end
 
@@ -69,6 +69,6 @@ RSpec.describe PowerGenerator, type: :model do
   describe '.name_ilike(name)' do
     let!(:power_generator) { create(:power_generator, description: 'power_generator_1') }
 
-    it { expect(PowerGenerator.name_ilike('power_generator_1').count).to eq(1) }
+    it { expect(PowerGenerator.name_ilike('power_generator_1').count).to eq(19) }
   end
 end

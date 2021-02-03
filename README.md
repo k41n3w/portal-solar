@@ -1,7 +1,7 @@
 # Portal Solar
 > Indica equipamentos e calcula frete.
 
-[![Build Status](https://travis-ci.com/kaioramos/portal-solar.svg?branch=master)](https://travis-ci.com/kaioramos/portal-solar)[![Maintainability](https://api.codeclimate.com/v1/badges/7120af2306b15e9ccd9d/maintainability)](https://codeclimate.com/github/kaioramos/portal-solar/maintainability)[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d5e958c3b48740f1a9c6db272a7cc3dc)](https://app.codacy.com/manual/kaineo/portal-solar?utm_source=github.com&utm_medium=referral&utm_content=kaioramos/portal-solar&utm_campaign=Badge_Grade_Dashboard) [![codecov](https://codecov.io/gh/kaioramos/portal-solar/branch/master/graph/badge.svg)](https://codecov.io/gh/kaioramos/portal-solar)
+![Ruby](https://github.com/kaioramos/portal-solar/workflows/Ruby/badge.svg)[![Maintainability](https://api.codeclimate.com/v1/badges/7120af2306b15e9ccd9d/maintainability)](https://codeclimate.com/github/kaioramos/portal-solar/maintainability)[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d5e958c3b48740f1a9c6db272a7cc3dc)](https://app.codacy.com/manual/kaineo/portal-solar?utm_source=github.com&utm_medium=referral&utm_content=kaioramos/portal-solar&utm_campaign=Badge_Grade_Dashboard) [![codecov](https://codecov.io/gh/kaioramos/portal-solar/branch/master/graph/badge.svg)](https://codecov.io/gh/kaioramos/portal-solar)
 
 
 
