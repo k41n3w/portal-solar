@@ -43,8 +43,11 @@ jobs:
       env:
         RAILS_ENV: test
         
+    - name: Run yarn
+      run: bundle exec yarn
+        
     - name: Run tests
-      run: bundle exec rake test
+      run: bundle exec rspec
       
     - name: Run RuboCop
       run: bundle exec rubocop
