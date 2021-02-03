@@ -43,6 +43,9 @@ jobs:
       env:
         RAILS_ENV: test
         
+    - name: Run yarn
+      run: bundle exec yarn
+        
     - name: Run tests
       run: bundle exec rspec
       
